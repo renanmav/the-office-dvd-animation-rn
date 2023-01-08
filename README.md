@@ -9,7 +9,7 @@ Built with:
 
 ## Demo
 
-![dvd-animation-demo](./assets/dvd-animation-demo.mp4)
+![dvd-animation-demo](./assets/dvd-animation-demo.gif)
 
 ## Run locally
 
