@@ -1,18 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { View, StyleSheet } from "react-native";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
-  withTiming,
-  withSequence,
 } from "react-native-reanimated";
+import {
+  DVD_LOGO_HEIGHT,
+  DVD_LOGO_VELOCITY,
+  DVD_LOGO_WIDTH,
+} from "./constants";
 import { DVDLogo } from "./DVDLogo";
 import { useRGBValues } from "./useRGBValues";
-
-const DVD_LOGO_WIDTH = 210 / 1.5;
-const DVD_LOGO_HEIGHT = 107 / 1.5;
-const DURATION = 2 * 1000;
-const config = { duration: DURATION };
+import { withBouncing } from "./withBouncing";
 
 type DVDAnimationProps = {
   width: number;
@@ -20,22 +19,28 @@ type DVDAnimationProps = {
 };
 
 export function DVDAnimation({ width, height }: DVDAnimationProps) {
-  const boundX = width - DVD_LOGO_WIDTH;
-  const boundY = height - DVD_LOGO_HEIGHT;
+  const lowerBoundX = useMemo(() => 0, []);
+  const lowerBoundY = useMemo(() => 0, []);
+  const upperBoundX = useMemo(() => width - DVD_LOGO_WIDTH, []);
+  const upperBoundY = useMemo(() => height - DVD_LOGO_HEIGHT, []);
 
-  const { R, G, B } = useRGBValues();
+  const { R, G, B, randomizeColor } = useRGBValues();
 
   const translateX = useSharedValue(0);
   const translateY = useSharedValue(0);
 
-  useEffect(function moveDVD() {
-    translateX.value = withSequence(
-      withTiming(boundX, config),
-      withTiming(0, config)
+  useEffect(function triggerDVDAnimation() {
+    translateX.value = withBouncing(
+      DVD_LOGO_VELOCITY,
+      lowerBoundX,
+      upperBoundX,
+      randomizeColor
     );
-    translateY.value = withSequence(
-      withTiming(boundY, config),
-      withTiming(0, config)
+    translateY.value = withBouncing(
+      DVD_LOGO_VELOCITY,
+      lowerBoundY,
+      upperBoundY,
+      randomizeColor
     );
   }, []);
 
@@ -52,9 +57,9 @@ export function DVDAnimation({ width, height }: DVDAnimationProps) {
     <View style={{ width, height }}>
       <Animated.View style={[styles.dvdView, dvdAnimatedStyle]}>
         <DVDLogo
-          r={R.value}
-          g={G.value}
-          b={B.value}
+          r={R}
+          g={G}
+          b={B}
           width={DVD_LOGO_WIDTH}
           height={DVD_LOGO_HEIGHT}
         />
@@ -68,10 +73,8 @@ const styles = StyleSheet.create({
     flex: 1,
     height: "100%",
     width: "100%",
-    // backgroundColor: "blue",
   },
   dvdView: {
-    // backgroundColor: "red",
     width: DVD_LOGO_WIDTH,
     height: DVD_LOGO_HEIGHT,
   },

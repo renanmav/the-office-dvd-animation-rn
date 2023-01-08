@@ -1,13 +1,22 @@
-import { useSharedValue } from "react-native-reanimated";
+import { useCallback, useState } from "react";
+
+const buildRandomColor = () => Math.random() * 255;
 
 export function useRGBValues() {
-  const R = useSharedValue(Math.random() * 255);
-  const G = useSharedValue(Math.random() * 255);
-  const B = useSharedValue(Math.random() * 255);
+  const [R, setR] = useState(buildRandomColor());
+  const [G, setG] = useState(buildRandomColor());
+  const [B, setB] = useState(buildRandomColor());
+
+  const randomizeColor = useCallback(() => {
+    setR(buildRandomColor());
+    setG(buildRandomColor());
+    setB(buildRandomColor());
+  }, []);
 
   return {
     R,
     G,
     B,
+    randomizeColor,
   };
 }
