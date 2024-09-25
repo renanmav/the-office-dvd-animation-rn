@@ -2,33 +2,29 @@
 
 DVD logo animation inspired by The Office show.
 
+<!-- TODO: add The Office gif -->
+
+<!-- TODO: also offered as a library -->
+
 <p align="center">
   <img src="./assets/dvd.gif" alt="DVD Animation Demo" height="500px" />
 </p>
 
 Built with:
 
-- [react-native](https://reactnative.dev/docs/getting-started)
-- [expo](https://docs.expo.dev/)
+- [react-native](https://reactnative.dev/docs/getting-started) & [expo](https://docs.expo.dev/)
 - [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/docs)
 
 ## Run locally
 
-Clone the repository
+Clone the repository and install dependencies
 
 ```
-$ git clone https://github.com/renanmav/TheOfficeDVDAnimationRN.git
-$ cd TheOfficeDVDAnimationRN
-```
-
-Install dependencies
-
-```
-$ yarn install
+bun i
 ```
 
 Run the app
 
 ```
-$ yarn start
+bun start
 ```

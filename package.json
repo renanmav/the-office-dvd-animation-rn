@@ -1,5 +1,5 @@
 {
-  "name": "theofficedvdanimationrn",
+  "name": "TheOfficeDVDAnimationRN",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -24,5 +24,6 @@
     "@types/react-native": "~0.70.6",
     "typescript": "^4.6.3"
   },
-  "private": true
+  "private": true,
+  "packageManager": "bun@1.1.29"
 }
