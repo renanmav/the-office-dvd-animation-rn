@@ -2,13 +2,11 @@
 
 DVD logo animation inspired by The Office show.
 
-<!-- TODO: add The Office gif -->
+<div align="center">
+  <img src="./assets/season-4-episode-3-gif-by-the-office.gif" alt="season-4-episode-3-gif-by-the-office" />
+</div>
 
 <!-- TODO: also offered as a library -->
-
-<p align="center">
-  <img src="./assets/dvd.gif" alt="DVD Animation Demo" height="500px" />
-</p>
 
 Built with:
 
