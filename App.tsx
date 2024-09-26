@@ -3,7 +3,6 @@ import { useState } from "react";
 import { LayoutRectangle, StyleSheet, Text, View } from "react-native";
 import { DVDAnimation } from "./src/DVDAnimation";
 
-// TODO: add support for react-native-web
 export default function App() {
   const [layoutState, setLayout] = useState<null | LayoutRectangle>(null);
 
@@ -18,8 +17,7 @@ export default function App() {
         <DVDAnimation width={layoutState.width} height={layoutState.height} />
       )}
 
-      {/* TODO: add support for dark mode */}
-      <StatusBar style="light" />
+      <StatusBar style="auto" />
     </View>
   );
 }
