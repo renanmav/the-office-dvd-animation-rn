@@ -9,20 +9,20 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "~47.0.12",
-    "expo-status-bar": "~1.4.2",
-    "react": "18.1.0",
-    "react-dom": "18.1.0",
-    "react-native": "0.70.8",
-    "react-native-reanimated": "~2.12.0",
-    "react-native-svg": "13.4.0",
-    "react-native-web": "~0.18.9"
+    "expo": "^51.0.34",
+    "expo-status-bar": "~1.12.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "0.74.5",
+    "react-native-reanimated": "~3.10.1",
+    "react-native-svg": "15.2.0",
+    "react-native-web": "~0.19.10"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
-    "@types/react": "~18.0.14",
+    "@types/react": "~18.2.79",
     "@types/react-native": "~0.70.6",
-    "typescript": "^4.6.3"
+    "typescript": "~5.3.3"
   },
   "private": true,
   "packageManager": "bun@1.1.29"

@@ -6,7 +6,7 @@ DVD logo animation inspired by The Office show.
   <img src="./assets/season-4-episode-3-gif-by-the-office.gif" alt="season-4-episode-3-gif-by-the-office" />
 </div>
 
-<!-- TODO: also offered as a library -->
+<!-- TODO: also offered as a npm package -->
 
 Built with:
 
