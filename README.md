@@ -10,8 +10,8 @@ DVD logo animation inspired by The Office show.
 
 Built with:
 
-- [react-native](https://reactnative.dev/docs/getting-started) & [expo](https://docs.expo.dev/)
-- [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/docs)
+- [expo](https://docs.expo.dev/) & [react-native](https://reactnative.dev/docs/getting-started) & [react-native-web](https://necolas.github.io/react-native-web)
+- [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated)
 
 ## Run locally
 
