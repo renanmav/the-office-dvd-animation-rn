@@ -1,4 +1,4 @@
-# TheOfficeDVDAnimationRN
+# the-office-dvd-animation-rn
 
 DVD logo animation inspired by The Office show.
 
