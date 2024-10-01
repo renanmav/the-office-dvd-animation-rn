@@ -1,5 +1,5 @@
 import { defineAnimation, runOnJS } from "react-native-reanimated";
-import type { Animation } from "react-native-reanimated/lib/types/reanimated2/commonTypes";
+import type { Animation } from "react-native-reanimated";
 
 interface BouncingAnimationState extends Animation<BouncingAnimationState> {
   lastTimestamp: number;
@@ -11,9 +11,9 @@ export function withBouncing(
   lowerBound: number,
   upperBound: number,
   onBounce: () => void
-) {
+): number {
   "worklet";
-  return defineAnimation(undefined, () => {
+  return defineAnimation<any>(0, () => {
     "worklet";
 
     const onFrame = (state: BouncingAnimationState, now: number) => {
